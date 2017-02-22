@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <!--[if IE 8]><script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script><!--<![endif]-->
+    <link rel='stylesheet' href='node_modules/video.js/dist/video-js.css'></script>
+    <script src='node_modules/video.js/dist/video.js'></script>
+    <script src="node_modules/es5-shim/es5-shim.js"></script>
+
+    <!-- include the playlist plugin -->
+    <script src='dist/videojs-upnext.js'></script>
+    <link rel='stylesheet' href='dist/videojs-upnext.css'>
+
+    <style>
+      .video-js {
+        /*width: 622.22px;*/
+        width: 840px;
+        height: 350px;
+      }
+
+      .video-js .vjs-poster {
+        /*background-color: white;*/
+        /*background-image: inherit !important;*/
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <video class="video-js vjs-big-play-centered" controls width='600' height='250'
+      poster='poster.jpg'
+    >
+      <source src='http://vjs.zencdn.net/v/oceans.mp4' type='video/mp4' >
+    </video>
+
+    <script>
+    var video = document.querySelector('video');
+
+    function getTitle(){
+      return "Hi, this is a title";
+    }
+
+    function next(){
+      console.log("END");
+    }
+
+    var player = videojs(video, {
+    }, function() {
+      player.upnext({
+        timeout : 5000,
+        getTitle : getTitle,
+        next : next
+      });
+    });
+
+
+    </script>
+  </body>
+</html>
