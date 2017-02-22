@@ -55,7 +55,7 @@ export class EndCard extends Component {
 
     player.on('playing', function() {
       this.upNextEvents.trigger('playing');
-    });
+    }.bind(this));
   }
 
   createEl() {
