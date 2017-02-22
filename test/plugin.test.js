@@ -38,7 +38,6 @@ QUnit.module('videojs-upnext', {
 });
 
 QUnit.test('registers itself with video.js', function(assert) {
-  assert.expect(2);
 
   assert.strictEqual(
     typeof Player.prototype.upnext,
@@ -50,9 +49,4 @@ QUnit.test('registers itself with video.js', function(assert) {
 
   // Tick the clock forward enough to trigger the player to be "ready".
   this.clock.tick(1);
-
-  assert.ok(
-    this.player.hasClass('vjs-upnext'),
-    'the plugin adds a class to the player'
-  );
 });

@@ -41,7 +41,9 @@ export class EndCard extends Component {
     this.chunkSize = (this.dashOffsetTotal - this.dashOffsetStart) / (this.options_.timeout / this.interval);
 
     player.on('ended', (event) => {
+      player.addClass('vjs-upnext');
       this.showCard((canceled) => {
+        player.removeClass('vjs-upnext');
         this.container.style.display = 'none';
         if (!canceled) {
           this.next();
@@ -143,7 +145,6 @@ const upnext = function(options) {
     headText: opts.headText || 'Up Next'
   };
 
-  this.addClass('vjs-upnext');
   this.addChild('endCard', settings);
 
 };

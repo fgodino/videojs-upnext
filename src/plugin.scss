@@ -14,20 +14,15 @@ $browser-context: 16;
 .video-js {
 
   .vjs-upnext-content {
-    pointer-events: none;
     font-size: 1.8em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    pointer-events: none;
+    pointer-events: auto;
     position: absolute;
     top: 0;
     bottom: 0;
     background: rgba(0,0,0,0.6);
     width: 100%;
     @include transition(opacity 0.1s);
-  }
-
-  .vjs-upnext-content * {
-    pointer-events: auto;
   }
 
   .vjs-upnext-top {
@@ -110,4 +105,8 @@ $browser-context: 16;
     cursor: pointer;
   }
 
+}
+
+.video-js.vjs-upnext {
+  pointer-events: none;
 }
