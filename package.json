@@ -1,8 +1,8 @@
 {
   "name": "videojs-upnext",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Youtube like plugin for up next videos",
-  "main": "dist/videojs-upnext.js",
+  "main": "es5/plugin.js",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
