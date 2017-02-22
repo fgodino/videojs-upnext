@@ -35,6 +35,8 @@ export class EndCard extends Component {
     this.getTitle = this.options_.getTitle;
     this.next = this.options_.next;
 
+    this.upNextEvents = new videojs.EventTarget();
+
     this.dashOffsetTotal = 586;
     this.dashOffsetStart = 293;
     this.interval = 50;
@@ -49,6 +51,10 @@ export class EndCard extends Component {
           this.next();
         }
       });
+    });
+
+    player.on('playing', function() {
+      this.upNextEvents.trigger('playing');
     });
   }
 
@@ -66,8 +72,6 @@ export class EndCard extends Component {
     this.title = container.getElementsByClassName('vjs-upnext-title')[0];
     this.cancelButton = container.getElementsByClassName('vjs-upnext-cancel-button')[0];
     this.nextButton = container.getElementsByClassName('vjs-upnext-autoplay-icon')[0];
-
-    this.upNextEvents = new videojs.EventTarget();
 
     this.cancelButton.onclick = function() {
       this.upNextEvents.trigger('cancel');
@@ -93,6 +97,11 @@ export class EndCard extends Component {
     this.title.innerHTML = this.getTitle();
 
     this.upNextEvents.one('cancel', () => {
+      clearTimeout(timeout);
+      cb(true);
+    });
+
+    this.upNextEvents.one('playing', () => {
       clearTimeout(timeout);
       cb(true);
     });
