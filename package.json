@@ -1,6 +1,6 @@
 {
   "name": "videojs-upnext",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Youtube like plugin for up next videos",
   "main": "es5/plugin.js",
   "scripts": {

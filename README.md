@@ -7,15 +7,41 @@ Youtube like plugin for up next videos
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
-- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#installation)
+- [Contribute](#contribute)
   - [Running Tests](#running-tests)
   - [Tag and Release](#tag-and-release)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Getting Started
+## Installation
+
+```sh
+npm install --save videojs-upnext
+```
+
+## Usage
+
+```html
+<link rel='stylesheet' href='dist/videojs-upnext.css'>
+
+<script src="//path/to/video.min.js"></script>
+<script src='dist/videojs-upnext.js'></script>
+
+<script>
+  var player = videojs('my-video');
+  player.upnext({
+    timeout : 5000,
+    headText : 'Up Next',
+    getTitle : function() { return 'Next vieo title' },
+    next : function () { performActionAfterTimeout() }
+  });
+</script>
+```
+
+## Contribute
 
 1. Clone this repository!
 1. Install dependencies: `npm install`
@@ -37,4 +63,6 @@ That's it! Refer to the [video.js plugin standards](https://github.com/videojs/g
 
 ## License
 
-Apache-2.0. Copyright (c) Brightcove, Inc.
+Apache-2.0. Copyright (c) Fernando Godino / http://github.com/fgodino
+
+[videojs]: http://videojs.com/
