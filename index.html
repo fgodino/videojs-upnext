@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    <!--[if IE 8]><script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script><!--<![endif]-->
-    <link rel='stylesheet' href='node_modules/video.js/dist/video-js.css'></script>
-    <script src='node_modules/video.js/dist/video.js'></script>
-    <script src="node_modules/es5-shim/es5-shim.js"></script>
+    <link href="//vjs.zencdn.net/5.16.0/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <!--[if IE 8]><script src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script><!--<![endif]-->
+
+    <script src="//vjs.zencdn.net/5.16.0/video.js"></script>
 
     <!-- include the playlist plugin -->
     <script src='dist/videojs-upnext.js'></script>
@@ -26,7 +28,7 @@
 
   <body>
 
-    <video class="video-js vjs-big-play-centered" controls width='600' height='250'
+    <video class='video-js vjs-big-play-centered' controls width='600' height='250'
       poster='poster.jpg'
     >
       <source src='http://vjs.zencdn.net/v/oceans.mp4' type='video/mp4' >
