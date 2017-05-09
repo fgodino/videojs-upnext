@@ -18,7 +18,7 @@ function getMainTemplate(options) {
     </div>
     <span class="vjs-upnext-bottom">
       <span class="vjs-upnext-cancel">
-        <button class="vjs-upnext-cancel-button" tabindex="0" aria-label="Cancel autoplay">Cancel</button>
+        <button class="vjs-upnext-cancel-button" tabindex="0" aria-label="Cancel autoplay">${options.cancelText}</button>
       </span>
     </span>
   `;
@@ -151,6 +151,7 @@ const upnext = function(options) {
     next: opts.next,
     getTitle: opts.getTitle,
     timeout: opts.timeout || 5000,
+    cancelText: opts.cancelText || 'Cancel',
     headText: opts.headText || 'Up Next'
   };
 
