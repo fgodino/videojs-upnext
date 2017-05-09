@@ -1,6 +1,7 @@
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
+
   @return #{$pixels/$context}em;
 }
 
@@ -22,6 +23,7 @@ $browser-context: 16;
     bottom: 0;
     background: rgba(0,0,0,0.6);
     width: 100%;
+
     @include transition(opacity 0.1s);
   }
 
@@ -48,7 +50,7 @@ $browser-context: 16;
     float: none;
     text-align: center;
   }
-  
+
   .vjs-upnext-headtext {
     display: block;
     font-size: 14px;
@@ -73,8 +75,8 @@ $browser-context: 16;
     cursor: pointer;
     display: inline-block;
     float: none;
-    padding: 10px!important;
-    font-size: 16px!important;
+    padding: 10px !important;
+    font-size: 16px !important;
     border: none;
   }
 
@@ -99,9 +101,9 @@ $browser-context: 16;
     width: 98px;
     height: 98px;
     margin: -49px 0 0 -49px;
-    -moz-transition: all .1s cubic-bezier(0.4,0.0,1,1);
-    -webkit-transition: all .1s cubic-bezier(0.4,0.0,1,1);
-    transition: all .1s cubic-bezier(0.4,0.0,1,1);
+    -moz-transition: all 0.1s cubic-bezier(0.4,0,1,1);
+    -webkit-transition: all 0.1s cubic-bezier(0.4,0,1,1);
+    transition: all 0.1s cubic-bezier(0.4,0,1,1);
     cursor: pointer;
   }
 
