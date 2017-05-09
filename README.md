@@ -24,6 +24,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
   player.upnext({
     timeout : 5000,
     headText : 'Up Next',
+    cancelText: 'Cancel',
     getTitle : function() { return 'Next video title' },
     next : function () { performActionAfterTimeout() }
   });
@@ -44,7 +45,13 @@ require('videojs-upnext');
 
 var player = videojs('my-video');
 
-player.upnext();
+player.upnext({
+  timeout : 5000,
+  headText : 'Up Next',
+  cancelText: 'Cancel',
+  getTitle : function() { return 'Next video title' },
+  next : function () { performActionAfterTimeout() }
+});
 ```
 
 ### RequireJS/AMD
@@ -55,7 +62,13 @@ When using with RequireJS (or another AMD library), get the script in whatever w
 require(['video.js', 'videojs-upnext'], function(videojs) {
   var player = videojs('my-video');
 
-  player.upnext();
+  player.upnext({
+    timeout : 5000,
+    headText : 'Up Next',
+    cancelText: 'Cancel',
+    getTitle : function() { return 'Next video title' },
+    next : function () { performActionAfterTimeout() }
+  });
 });
 ```
 
