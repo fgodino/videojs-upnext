@@ -31,7 +31,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
 </script>
 ```
 
-### Browserify
+### Browserify / Webpack
 
 When using with Browserify, install videojs-upnext via npm and `require` the plugin as you would any other module.
 
