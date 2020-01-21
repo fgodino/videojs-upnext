@@ -35,7 +35,7 @@ export class EndCard extends Component {
 
   constructor(player, options) {
     super(player, options);
-
+    let _this = this;
     this.getTitle = this.options_.getTitle;
     this.next = this.options_.next;
 
@@ -50,7 +50,9 @@ export class EndCard extends Component {
       player.addClass('vjs-upnext--showing');
       this.showCard((canceled) => {
         player.removeClass('vjs-upnext--showing');
-        this.container.style.display = 'none';
+        // this.container.style.display = 'none';
+        if(!_this.el()) return;
+        _this.dispose();
         if (!canceled) {
           this.next();
         }
