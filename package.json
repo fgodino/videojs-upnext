@@ -1,6 +1,6 @@
 {
   "name": "videojs-upnext-card",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Youtube like plugin for up next videos",
   "main": "dist/upnext.js",
   "jsnext:main": "src/js/index.js",
