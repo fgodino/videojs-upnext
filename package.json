@@ -47,7 +47,6 @@
     "video.js": "^5.16.0"
   },
   "devDependencies": {
-    "husky": "^0.13.1",
-    "videojs-spellbook": "^4.0.0"
+    "husky": "^0.13.1"
   }
 }
