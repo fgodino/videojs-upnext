@@ -1,5 +1,5 @@
 {
-  "name": "videojs-upnext",
+  "name": "videojs-upnext-card",
   "version": "2.2.0",
   "description": "Youtube like plugin for up next videos",
   "main": "build/es5/index.js",
@@ -11,15 +11,14 @@
     "version": "4.0.2"
   },
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack",
     "clean": "sb-clean",
     "lint": "sb-lint",
     "start": "sb-start",
     "test": "sb-test",
     "watch": "sb-watch",
     "prepublish": "npm run build",
-    "postversion": "sb-release",
-    "prepush": "npm run test"
+    "postversion": "sb-release"
   },
   "keywords": [
     "videojs",
