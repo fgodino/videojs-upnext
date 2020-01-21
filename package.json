@@ -11,7 +11,7 @@
     "version": "4.0.2"
   },
   "scripts": {
-    "build": "sb-build",
+    "build": "webpack -w",
     "clean": "sb-clean",
     "lint": "sb-lint",
     "start": "sb-start",
@@ -47,6 +47,8 @@
     "video.js": "^5.16.0"
   },
   "devDependencies": {
-    "husky": "^0.13.1"
+    "husky": "^0.13.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
