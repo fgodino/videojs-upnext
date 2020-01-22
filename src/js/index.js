@@ -182,7 +182,8 @@ const upnext = function(options) {
     cancelText: opts.cancelText || 'Cancel',
     headText: opts.headText || 'Up Next'
   };
-
+  // removing existing endCard to avoid overlapping multiple endCard's
+  this.removeChild('endCard');
   this.addChild('endCard', settings);
 
 };
