@@ -46,6 +46,9 @@
     "video.js": "^5.16.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
     "husky": "^0.13.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
