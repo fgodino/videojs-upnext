@@ -1,6 +1,6 @@
 {
   "name": "videojs-upnext-card",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Youtube like plugin for up next videos",
   "main": "dist/upnext.js",
   "jsnext:main": "src/js/index.js",
@@ -25,6 +25,11 @@
     "videojs-plugin"
   ],
   "author": "Fernando Godino <fernando@varsityviews.com>",
+  "homepage": "https://github.com/venkataramanab/videojs-upnext-card",
+  "contributors": [
+    "venkataramanab (https://github.com/venkataramanab/)"
+  ],
+  "repository": "github:venkataramanab/videojs-upnext-card",
   "license": "Apache-2.0",
   "spellbook": {
     "lang": false,
@@ -49,7 +54,11 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
     "husky": "^0.13.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }

@@ -1,5 +1,5 @@
 import videojs from 'video.js';
-
+import '../css/index.scss'
 const defaults = {};
 
 // Cross-compatibility for Video.js 5 and 6.
