@@ -50,6 +50,7 @@ player.upnext({
   timeout : 5000,
   headText : 'Up Next',
   cancelText: 'Cancel',
+  poster: 'posterUrl',
   getTitle : function() { return 'Next video title' },
   next : function () { performActionAfterTimeout() }
 });
@@ -67,6 +68,7 @@ require(['video.js', 'videojs-upnext-card'], function(videojs) {
     timeout : 5000,
     headText : 'Up Next',
     cancelText: 'Cancel',
+    poster: 'posterUrl',
     getTitle : function() { return 'Next video title' },
     next : function () { performActionAfterTimeout() }
   });
