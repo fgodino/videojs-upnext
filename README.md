@@ -25,6 +25,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
     timeout : 5000,
     headText : 'Up Next',
     cancelText: 'Cancel',
+    poster: 'posterUrl',
     getTitle : function() { return 'Next video title' },
     next : function () { performActionAfterTimeout() }
   });
