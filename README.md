@@ -5,7 +5,7 @@ Youtube like plugin for up next videos
 ## Installation
 
 ```sh
-npm install --save videojs-upnext
+npm install --save videojs-upnext-card
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
 
 ```html
 <script src="//path/to/video.min.js"></script>
-<script src="//path/to/videojs-upnext.min.js"></script>
+<script src="//path/to/upnext.min.js"></script>
 <script>
   var player = videojs('my-video');
   player.upnext({
@@ -41,7 +41,7 @@ var videojs = require('video.js');
 // The actual plugin function is exported by this module, but it is also
 // attached to the `Player.prototype`; so, there is no need to assign it
 // to a variable.
-require('videojs-upnext');
+require('videojs-upnext-card');
 
 var player = videojs('my-video');
 
@@ -59,7 +59,7 @@ player.upnext({
 When using with RequireJS (or another AMD library), get the script in whatever way you prefer and `require` the plugin as you normally would:
 
 ```js
-require(['video.js', 'videojs-upnext'], function(videojs) {
+require(['video.js', 'videojs-upnext-card'], function(videojs) {
   var player = videojs('my-video');
 
   player.upnext({
