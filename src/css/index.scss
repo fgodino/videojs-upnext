@@ -15,15 +15,22 @@ $browser-context: 16;
 .video-js {
 
   .vjs-upnext-content {
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vjs-upnext-background {
     font-size: 1.8em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    pointer-events: auto;
     position: absolute;
     top: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.6) center;
     width: 100%;
-
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
     @include transition(opacity 0.1s);
   }
 

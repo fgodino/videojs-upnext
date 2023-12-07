@@ -1,5 +1,5 @@
 import videojs from 'video.js';
-
+import '../css/index.scss'
 const defaults = {};
 
 // Cross-compatibility for Video.js 5 and 6.
@@ -8,21 +8,24 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
 
 function getMainTemplate(options) {
   return `
-    <div class="vjs-upnext-top">
-      <span class="vjs-upnext-headtext">${options.headText}</span>
-      <div class="vjs-upnext-title"></div>
-    </div>
-    <div class="vjs-upnext-autoplay-icon">
-      <svg height="100%" version="1.1" viewbox="0 0 98 98" width="100%">
-        <circle class="vjs-upnext-svg-autoplay-circle" cx="49" cy="49" fill="#000" fill-opacity="0.8" r="48"></circle>
-        <circle class="vjs-upnext-svg-autoplay-ring" cx="-49" cy="49" fill-opacity="0" r="46.5" stroke="#FFFFFF" stroke-width="4" transform="rotate(-90)"></circle>
-        <polygon class="vjs-upnext-svg-autoplay-triangle" fill="#fff" points="32,27 72,49 32,71"></polygon></svg>
-    </div>
-    <span class="vjs-upnext-bottom">
-      <span class="vjs-upnext-cancel">
-        <button class="vjs-upnext-cancel-button" tabindex="0" aria-label="Cancel autoplay">${options.cancelText}</button>
+    <div class="vjs-upnext-background" style="background-image: url(${options.poster});"></div>
+    <div class="vjs-upnext-content">
+      <div class="vjs-upnext-top">
+        <span class="vjs-upnext-headtext">${options.headText}</span>
+        <div class="vjs-upnext-title"></div>
+      </div>
+      <div class="vjs-upnext-autoplay-icon">
+        <svg height="100%" version="1.1" viewbox="0 0 98 98" width="100%">
+          <circle class="vjs-upnext-svg-autoplay-circle" cx="49" cy="49" fill="#000" fill-opacity="0.8" r="48"></circle>
+          <circle class="vjs-upnext-svg-autoplay-ring" cx="-49" cy="49" fill-opacity="0" r="46.5" stroke="#FFFFFF" stroke-width="4" transform="rotate(-90)"></circle>
+          <polygon class="vjs-upnext-svg-autoplay-triangle" fill="#fff" points="32,27 72,49 32,71"></polygon></svg>
+      </div>
+      <span class="vjs-upnext-bottom">
+        <span class="vjs-upnext-cancel">
+          <button class="vjs-upnext-cancel-button" tabindex="0" aria-label="Cancel autoplay">${options.cancelText}</button>
+        </span>
       </span>
-    </span>
+    </div>
   `;
 }
 
@@ -35,7 +38,7 @@ export class EndCard extends Component {
 
   constructor(player, options) {
     super(player, options);
-
+    let _this = this;
     this.getTitle = this.options_.getTitle;
     this.next = this.options_.next;
 
@@ -50,7 +53,9 @@ export class EndCard extends Component {
       player.addClass('vjs-upnext--showing');
       this.showCard((canceled) => {
         player.removeClass('vjs-upnext--showing');
-        this.container.style.display = 'none';
+        // this.container.style.display = 'none';
+        if(!_this.el()) return;
+        _this.dispose();
         if (!canceled) {
           this.next();
         }
@@ -65,7 +70,7 @@ export class EndCard extends Component {
   createEl() {
 
     const container = super.createEl('div', {
-      className: 'vjs-upnext-content',
+      className: 'upnext-container',
       innerHTML: getMainTemplate(this.options_)
     });
 
@@ -176,11 +181,13 @@ const upnext = function(options) {
   const settings = {
     next: opts.next,
     getTitle: opts.getTitle,
+    poster: opts.poster,
     timeout: opts.timeout || 5000,
     cancelText: opts.cancelText || 'Cancel',
     headText: opts.headText || 'Up Next'
   };
-
+  // removing existing endCard to avoid overlapping multiple endCard's
+  this.removeChild('endCard');
   this.addChild('endCard', settings);
 
 };
